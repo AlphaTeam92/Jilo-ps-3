@@ -1,0 +1,360 @@
+/* ========== Dashboard Page ========== */
+
+/* Welcome Banner */
+.welcome-banner {
+  position: relative;
+  background: var(--gradient-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  overflow: hidden;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.welcome-text h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: var(--space-xs);
+}
+
+.welcome-text p {
+  color: var(--gray-400);
+  font-size: 0.9375rem;
+}
+
+.welcome-stats {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  color: var(--gray-300);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--success);
+  border-radius: var(--radius-full);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.25rem 0.75rem;
+  background: rgba(81, 207, 102, 0.1);
+  border: 1px solid rgba(81, 207, 102, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+/* Decoration circles */
+.welcome-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.06;
+}
+
+.deco-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary-500);
+  top: -100px;
+  right: -50px;
+}
+
+.deco-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--accent-500);
+  bottom: -80px;
+  right: 100px;
+}
+
+.deco-3 {
+  width: 150px;
+  height: 150px;
+  background: var(--primary-400);
+  top: -40px;
+  right: 250px;
+}
+
+/* Stat Cards */
+.stat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.stat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.stat-change.positive { color: var(--success); }
+.stat-change.negative { color: var(--danger); }
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart Cards */
+.chart-card {
+  min-height: 400px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.chart-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.75rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.chart-tooltip-label {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+/* Pie Chart */
+.pie-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+  min-width: 120px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.8125rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.legend-label {
+  flex: 1;
+  color: var(--gray-400);
+}
+
+.legend-value {
+  font-weight: 600;
+  color: var(--gray-300);
+}
+
+/* Call Feed */
+.call-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.call-feed-item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.call-feed-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.call-status-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.call-status-icon.completed {
+  background: rgba(81, 207, 102, 0.15);
+  color: var(--success);
+}
+
+.call-status-icon.escalated {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--danger);
+}
+
+.call-feed-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.call-feed-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.call-feed-top strong {
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.call-feed-meta {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: 6px;
+  font-size: 0.6875rem;
+  color: var(--gray-500);
+}
+
+.call-feed-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Patient Table */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.patient-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.patient-cell strong {
+  display: block;
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.patient-cell .text-xs {
+  display: block;
+}
+
+.adherence-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.adherence-cell span {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  min-width: 36px;
+}
+
+.action-btns {
+  display: flex;
+  gap: 2px;
+}
+
+@media (max-width: 768px) {
+  .welcome-banner {
+    padding: var(--space-lg);
+  }
+
+  .welcome-text h1 {
+    font-size: 1.25rem;
+  }
+
+  .welcome-stats {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}

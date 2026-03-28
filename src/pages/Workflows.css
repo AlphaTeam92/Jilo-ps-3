@@ -1,0 +1,277 @@
+/* ========== Workflows Page ========== */
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-lg);
+}
+
+.workflow-card {
+  transition: all var(--transition-base);
+}
+
+.workflow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.workflow-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.workflow-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.workflow-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.workflow-card-info h4 {
+  font-size: 1rem;
+}
+
+.workflow-desc {
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.workflow-metrics {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.workflow-metric {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.workflow-metric svg {
+  color: var(--primary-400);
+}
+
+.workflow-progress {
+  margin-bottom: var(--space-md);
+}
+
+.workflow-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--glass-border);
+}
+
+.workflow-card-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.workflow-card-actions .btn-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--gray-500);
+  border-radius: var(--radius-sm);
+}
+
+.workflow-card-actions .btn-icon:hover {
+  color: var(--primary-400);
+  background: rgba(32, 201, 151, 0.1);
+}
+
+/* Workflow Builder Modal */
+.workflow-builder-modal {
+  max-width: 720px;
+  max-height: 85vh;
+}
+
+.builder-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.builder-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.builder-step {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.builder-step:hover {
+  border-color: var(--primary-500);
+  background: rgba(32, 201, 151, 0.03);
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-header {
+  margin-bottom: var(--space-md);
+}
+
+.step-type-select {
+  max-width: 200px;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: #fff;
+}
+
+.step-config {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.step-options {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-500);
+}
+
+.step-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) 0;
+  color: var(--gray-600);
+}
+
+/* Condition Branches */
+.condition-branches {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.branch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+}
+
+.branch-yes {
+  background: rgba(81, 207, 102, 0.06);
+  border: 1px solid rgba(81, 207, 102, 0.15);
+}
+
+.branch-no {
+  background: rgba(255, 107, 107, 0.06);
+  border: 1px solid rgba(255, 107, 107, 0.15);
+}
+
+.branch-label {
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.badge-success .branch-label,
+.branch-label.badge-success {
+  background: rgba(81, 207, 102, 0.15);
+  color: var(--success);
+}
+
+.branch-label.badge-danger {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--danger);
+}
+
+.add-step-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 2px dashed var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--gray-500);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  margin-top: var(--space-sm);
+}
+
+.add-step-btn:hover {
+  border-color: var(--primary-500);
+  color: var(--primary-400);
+  background: rgba(32, 201, 151, 0.04);
+}
+
+@media (max-width: 768px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-builder-modal {
+    max-width: 100%;
+    margin: 0;
+  }
+}
