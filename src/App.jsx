@@ -12,6 +12,7 @@ import Languages from './pages/Languages';
 import Alerts from './pages/Alerts';
 import Settings from './pages/Settings';
 import Help from './pages/Help';
+import HealthDataDashboard from './components/HealthDataDashboard';
 
 export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/help" element={<Help />} />
+            <Route path="/data" element={<HealthDataDashboard />} />
           </Routes>
         </div>
       </div>

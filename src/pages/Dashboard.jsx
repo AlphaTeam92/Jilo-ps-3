@@ -30,6 +30,7 @@ import {
   bmiDistribution,
   alerts,
 } from '../data/mockData';
+import HealthDataDashboard from '../components/HealthDataDashboard';
 import './Dashboard.css';
 
 const CustomTooltip = ({ active, payload, label }) => {
@@ -267,6 +268,9 @@ export default function Dashboard() {
           </table>
         </div>
       </div>
+
+      {/* Supabase Health Data Table */}
+      <HealthDataDashboard />
     </div>
   );
 }
